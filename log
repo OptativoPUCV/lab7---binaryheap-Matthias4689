@@ -103,3 +103,18 @@ heap.c:39:31: error: expected ‘;’ before ‘:’ token
       |                               ;
 Compilation failed
 b45c62c
+Thu 28 Sep 2023 08:07:34 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:39:17: error: ‘K’ undeclared (first use in this function)
+   39 |   pq->heapArray[K].data = fata;
+      |                 ^
+heap.c:39:17: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:39:27: error: ‘fata’ undeclared (first use in this function); did you mean ‘data’?
+   39 |   pq->heapArray[K].data = fata;
+      |                           ^~~~
+      |                           data
+Compilation failed
+c6a89f4
