@@ -140,3 +140,9 @@ heap.c:39:17: error: ‘K’ undeclared (first use in this function)
 heap.c:39:17: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 404ebdb
+Thu 28 Sep 2023 08:10:39 AM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  7|1
+total_score: 45/70
+e9a9314

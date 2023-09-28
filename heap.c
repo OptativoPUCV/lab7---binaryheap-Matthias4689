@@ -36,8 +36,8 @@ void heap_push(Heap* pq, void* data, int priority){
   }
 
   int k = pq->size;
-  pq->heapArray[K].data = data;
-  pq->heapArray[K].priority = priority;
+  pq->heapArray[k].data = data;
+  pq->heapArray[k].priority = priority;
 
   while (k > 0){
     int padre = (k - 1) / 2;
