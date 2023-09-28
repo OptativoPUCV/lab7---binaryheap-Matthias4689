@@ -129,3 +129,14 @@ heap.c:39:17: error: ‘K’ undeclared (first use in this function)
 heap.c:39:17: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 3b502f5
+Thu 28 Sep 2023 08:09:15 AM UTC: 
+ heap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:39:17: error: ‘K’ undeclared (first use in this function)
+   39 |   pq->heapArray[K].data = data;
+      |                 ^
+heap.c:39:17: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+404ebdb
