@@ -52,3 +52,19 @@ Thu 28 Sep 2023 07:52:54 AM UTC:
  tests:  2|2
 total_score: 20/70
 8d33349
+Thu 28 Sep 2023 07:56:29 AM UTC: 
+ heap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:33:10: error: expected expression before ‘<’ token
+   33 |   if (pq-<size == pq-<capac){
+      |          ^
+heap.c:35:73: error: expected ‘;’ before ‘}’ token
+   35 |     pq->heapArray = realloc(pq->heapArray, pq->capac * sizeof(heapElem))
+      |                                                                         ^
+      |                                                                         ;
+   36 |   }
+      |   ~                                                                      
+Compilation failed
+506e7b8
