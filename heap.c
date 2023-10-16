@@ -58,6 +58,7 @@ void heap_pop(Heap* pq){
   if (pq->size <= 0) return;
 
   pq->heapArray[0] = pq->heapArray[pq->size-1];
+  heapify_down(pq, 0);
   
   if(pq->capac > 3 && pq->size < pq->capac / 2){
     pq->capac /= 2;
@@ -65,6 +66,23 @@ void heap_pop(Heap* pq){
   }
 }
 
+void heapify_down(Heap* pq, int k){
+  int hijoIzq = 2 * k + 1;
+  int hijoDer = 2 * k + 2;
+  int maxIndice = k;
+
+  if (hijoIzq < pq->size && pq->heapArray[hijoIzq].priority > pq->heapArray[maxIndice].priority) maxIndice = hijoIzq;
+
+  if (hijoDer < pq->size && pq->heapArray[hijoDer].priority > pq->heapArray[maxIndice].priority) maxIndice = hijoDer;
+
+  if (maxIndice != k){
+    heapElem aux = pq->heapArray[k];
+    pq->heapArray[k] = pq->heapArray[maxIndice];
+    pq->heapArray[maxIndice] = aux;
+
+    heapify_down(pq, maxIndice); 
+  }
+}
 
 
 Heap* createHeap()
