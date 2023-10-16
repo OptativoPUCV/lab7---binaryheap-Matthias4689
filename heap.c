@@ -20,7 +20,7 @@ typedef struct Heap{
 void* heap_top(Heap* pq){
   if (pq->size == 0) return NULL;
   
-  return pq->heapArray[0].data;
+  return pq->heapArray->data;
 }
 
 
@@ -53,6 +53,8 @@ void heap_push(Heap* pq, void* data, int priority){
   pq->size++;
 }
 
+
+// Funcion auxiliar para heap_pop
 void heapify_down(Heap* pq, int k){
   int hijoIzq = 2 * k + 1;
   int hijoDer = 2 * k + 2;
@@ -74,7 +76,8 @@ void heapify_down(Heap* pq, int k){
 void heap_pop(Heap* pq){
   if (pq->size <= 0) return;
 
-  pq->heapArray[0] = pq->heapArray[pq->size-1];
+  pq->size--;
+  pq->heapArray[0] = pq->heapArray[pq->size];
   heapify_down(pq, 0);
   
   if(pq->capac > 3 && pq->size < pq->capac / 2){
